@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+home
+{% endblock title %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}  
+        <div class="ui raised very padded text container segment" style="background-color: black !important;">
+            <p style="font-family: 'Nanum Brush Script', cursive;color:white;font-size:2rem;text-align:center;  ">
+                Hello {{user}}
+            </p>
+            <hr>
+            <p style="font-family: 'Nanum Brush Script', cursive;font-size:4rem; text-align:center; color:white">
+                Welcome to <span style="color:goldenrod;">Django</span>
+            </p>
+
+
+        </div>
+    {% else %}
+        <div class="ui raised very padded text container segment" style="background-color: black !important;">
+            <p style="font-family: 'Nanum Brush Script', cursive;font-size:4rem; text-align:center; color:white">
+                Welcome to <span style="color:goldenrod;">Django</span>
+            </p>
+        </div>
+        <div class="ui raised very padded text container segment" style="background-color: black !important;">
+            <p style="font-family: 'Nanum Brush Script', cursive;font-size:4rem; text-align:center; color:white;vertical-align: middle !important;">
+                Don't have an account?
+                <br>
+                Feel free to
+                <span>
+                    <a href="login/register/" style="color: purple;">Register</a>
+                </span> 
+            </p>
+        </div>
+        
+    {% endif %}
+<br>
+</h1>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

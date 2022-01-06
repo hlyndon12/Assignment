@@ -1,0 +1,26 @@
+{% url 'home-view' as path_to_home %}
+<div class="ui inverted segment menu">
+
+    <div class="ui sticky container" style="width: 670px !important; height: 42.6px !important; left: 424.6px;">
+        <p style="font-family: 'Nanum Brush Script', cursive;font-size:4rem; text-align:center; color:white">
+            Assignment
+        </p>
+        <div class="right menu">
+            {% if request.user.is_authenticated %}
+            <a href={% url 'createpost' %} class="ui item">
+                Create Post
+            </a>
+            <a href={% url 'newsfeed' %} class="ui item">
+                News Feed
+            </a>
+            <a href={% url 'logout' %} class="ui item">
+                Logout
+            </a>
+            {% else %}
+            <a href={% url 'login' %} class="ui item">
+                Login
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in posts %}
+    <div class="ui inverted segments">
+        <p>@{{post.user.username}}</p>
+        <div class="ui inverted segment">
+            <p>{{post.text}}</p>
+        </div>
+        <p>{{post.created_at}}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
